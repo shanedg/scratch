@@ -4,7 +4,9 @@
   "description": "fast, flexible personal site from nothing",
   "main": "server.js",
   "scripts": {
-    "test": "echo \"Error: no test specified\" && exit 1"
+    "test": "echo \"Error: no test specified\" && exit 1",
+    "test:prod-psi": "psi https://sgarrity.com/ --strategy=desktop",
+    "test:prod-lighthouse": "lighthouse https://sgarrity.com --view"
   },
   "author": "shanedgarrity@gmail.com",
   "license": "ISC",
