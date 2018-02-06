@@ -2,6 +2,7 @@ const path = require('path');
 
 module.exports = {
   entry: './src/server.ts',
+  target: 'node',
   module: {
     rules: [
       {
@@ -12,6 +13,9 @@ module.exports = {
     ]
   },
   resolve: {
+    alias:{
+      r: path.resolve( __dirname, 'src')
+    },
     extensions: [ '.tsx', '.ts', '.js' ]
   },
   output: {
