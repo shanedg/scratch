@@ -8,8 +8,8 @@
   "main": "dist/server.js",
   "scripts": {
     "test": "echo \"Error: no test specified\" && exit 1",
-    "test:prod-psi": "psi https://sgarrity.com/ --strategy=desktop",
-    "test:prod-lighthouse": "lighthouse https://sgarrity.com --view",
+    "test:heroku-dev-psi": "psi https://scratch-develop.herokuapp.com/ --strategy=mobile && psi https://scratch-develop.herokuapp.com/ --strategy=desktop",
+    "test:heroku-dev-lighthouse": "lighthouse https://scratch-develop.herokuapp.com/ --view",
     "install:dev": "node node_modules/webpack/bin/webpack.js --watch",
     "install": "node node_modules/webpack/bin/webpack.js",
     "start:dev": "echo nodemon??",
@@ -17,7 +17,10 @@
   },
   "author": "shanedgarrity@gmail.com",
   "license": "ISC",
-  "devDependencies": {},
+  "devDependencies": {
+    "lighthouse": "2.8.0",
+    "psi": "3.1.0"
+  },
   "dependencies": {
     "@types/node": "9.4.0",
     "express": "4.16.2",
