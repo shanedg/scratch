@@ -25,7 +25,7 @@ app.use((req, res, next) => {
  * Primary app routes.
  */
 // app.get('/', ctrl.index);
-app.get('/', (req, res) => res.send('Hello World!'));
+app.get('/', (req, res) => res.send('Hello Woirld!'));
 
 app.listen(app.get('port'), () => console.log('listening on', app.get('port')));
 
