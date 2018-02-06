@@ -2,25 +2,29 @@
   "name": "scratch",
   "version": "1.0.0",
   "description": "fast, flexible personal site from nothing",
+  "engines": {
+    "node": "9.4.0"
+  },
   "main": "dist/server.js",
   "scripts": {
     "test": "echo \"Error: no test specified\" && exit 1",
     "test:prod-psi": "psi https://sgarrity.com/ --strategy=desktop",
-    "test:prod-lighthouse": "lighthouse https://sgarrity.com --view"
+    "test:prod-lighthouse": "lighthouse https://sgarrity.com --view",
+    "install:dev": "node node_modules/webpack/bin/webpack.js --watch",
+    "install": "node node_modules/webpack/bin/webpack.js",
+    "start:dev": "echo nodemon??",
+    "start": "node dist/server.js"
   },
   "author": "shanedgarrity@gmail.com",
   "license": "ISC",
-  "devDependencies": {
-    "@types/express": "4.11.0",
-    "@types/node": "9.3.0",
-    "@types/webpack": "3.8.3",
-    "ts-loader": "3.3.1",
-    "ts-node": "4.1.0",
-    "typescript": "2.6.2",
+  "devDependencies": {},
+  "dependencies": {
+    "@types/node": "9.4.0",
+    "express": "4.16.2",
+    "node": "9.4.0",
+    "ts-loader": "3.4.0",
+    "typescript": "2.7.1",
     "webpack": "3.10.0"
   },
-  "dependencies": {
-    "express": "4.16.2",
-    "node": "9.4.0"
-  }
+  "private": true
 }
