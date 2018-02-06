@@ -1,0 +1,21 @@
+{
+  "name": "scratch",
+  "description": "fast, flexible personal site from nothing (webpack, typescript, express, node)",
+  "scripts": {
+  },
+  "env": {
+  },
+  "formation": {
+    "web": {
+      "quantity": 1
+    }
+  },
+  "addons": [
+
+  ],
+  "buildpacks": [
+    {
+      "url": "heroku/nodejs"
+    }
+  ]
+}
