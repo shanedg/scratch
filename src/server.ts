@@ -16,6 +16,10 @@ app.use((req, res, next) => {
  */
 app.get('/', ctrl.index);
 
+app.get('*', function(req, res) {
+  res.redirect(302, '/');
+});
+
 app.listen(app.get('port'), () => console.log('scratch listening on', app.get('port')));
 
 module.exports = app;
