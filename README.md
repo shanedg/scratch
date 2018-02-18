@@ -1,5 +1,5 @@
 # scratch
-fast, flexible site from nothing (webpack, typescript, node, express)
+fast, flexible site from nothing (webpack, node, express)
 
 ## installation
 1. npm install
