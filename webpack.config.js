@@ -6,7 +6,7 @@ module.exports = {
   module: {
     rules: [
       {
-        test: /\.js$/,
+        test: /\.jsx?$/,
         exclude: /node_modules/,
         use: [{
           loader: 'babel-loader'
@@ -18,7 +18,7 @@ module.exports = {
     alias:{
       r: path.resolve( __dirname, 'src')
     },
-    extensions: [ '.js' ]
+    extensions: [ '.js', '.jsx' ]
   },
   output: {
     filename: 'server.js',
