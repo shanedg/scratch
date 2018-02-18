@@ -80,7 +80,7 @@ export let error404 = (req, res) => {
     description: 'error, not found (404)'
   };
 
-  res.send(`
+  res.status(404).send(`
     <!doctype html>
     <html class="no-js" lang="en">
       <head>
