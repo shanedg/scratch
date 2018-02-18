@@ -1,8 +1,8 @@
 {
     "temporary": {
-        "/duh": "/"
+      "/temp": "/"
     },
     "permanent": {
-        "/duh/": "/"
+        "/index.html": "/"
     }
 }
