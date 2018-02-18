@@ -34,10 +34,15 @@ app.use((req, res, next) => {
   next();
 });
 
-/**
- * Primary app routes.
+/*
+ * Primary app routes
  */
 app.get('/', ctrl.index);
+
+/*
+ * 404 Error handling
+ */
+app.get('*', ctrl.error404);
 
 app.listen(app.get('port'), () => {
   console.log('scratch listening on', app.get('port'))
