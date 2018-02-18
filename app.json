@@ -1,6 +1,6 @@
 {
   "name": "scratch",
-  "description": "fast, flexible personal site from nothing (webpack, typescript, express, node)",
+  "description": "fast, flexible personal site from nothing (webpack, express, node)",
   "scripts": {
   },
   "env": {

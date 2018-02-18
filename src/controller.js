@@ -4,8 +4,8 @@ import { Request, Response } from 'express';
  * GET /
  * Home page or 'index'.
  */
-export let index = (req: Request, res: Response) => {
-  console.log('\nindex > ' + req.method + '\n');
+export let index = (req, res) => {
+  console.warn('index > ' + req.method + ' @ ' + req.originalUrl);
 
   let meta = {
     title: 'welcome',
@@ -35,7 +35,7 @@ export let index = (req: Request, res: Response) => {
         <noscript><iframe src="https://www.googletagmanager.com/ns.html?id=GTM-W9K5B8F"
         height="0" width="0" style="display:none;visibility:hidden"></iframe></noscript>
         <!-- End Google Tag Manager (noscript) -->
-        
+
         <!--[if lte IE 9]>
           <p class="browserupgrade">You are using an <strong>outdated</strong> browser. Please <a href="https://browsehappy.com/">upgrade your browser</a> to improve your experience and security.</p>
         <![endif]-->

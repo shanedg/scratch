@@ -1,5 +1,8 @@
 {
-    "exact-match": {
-        "*": "/"
+    "temporary": {
+        "/duh": "/"
+    },
+    "permanent": {
+        "/duh/": "/"
     }
 }

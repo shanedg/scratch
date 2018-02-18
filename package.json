@@ -24,11 +24,11 @@
     "psi": "3.1.0"
   },
   "dependencies": {
-    "@types/node": "9.4.0",
+    "babel-core": "6.26.0",
+    "babel-loader": "7.1.2",
+    "babel-preset-env": "1.6.1",
     "express": "4.16.2",
     "node": "9.4.0",
-    "ts-loader": "3.4.0",
-    "typescript": "2.7.1",
     "webpack": "3.10.0"
   },
   "private": true

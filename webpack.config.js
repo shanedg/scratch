@@ -1,14 +1,16 @@
 const path = require('path');
 
 module.exports = {
-  entry: './src/server.ts',
+  entry: './src/server.js',
   target: 'node',
   module: {
     rules: [
       {
-        test: /\.tsx?$/,
-        use: 'ts-loader',
-        exclude: /node_modules/
+        test: /\.js$/,
+        exclude: /node_modules/,
+        use: [{
+          loader: 'babel-loader',
+        }]
       }
     ]
   },
@@ -16,7 +18,7 @@ module.exports = {
     alias:{
       r: path.resolve( __dirname, 'src')
     },
-    extensions: [ '.tsx', '.ts', '.js' ]
+    extensions: [ '.js' ]
   },
   output: {
     filename: 'server.js',
