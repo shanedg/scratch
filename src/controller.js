@@ -1,5 +1,3 @@
-import { Request, Response } from 'express';
-
 /**
  * GET /
  * Home page or 'index'.

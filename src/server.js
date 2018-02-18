@@ -6,10 +6,16 @@ import * as ctrl from 'r/controller';
 const appRedirects = require('r/app-redirects.json');
 
 // Create Express server
-let app = express();
+const app = express();
 
-// Express configuration
+/*
+ * Express config
+ */
 app.set('port', process.env.PORT || 3000);
+
+/*
+ * Middleware
+ */
 app.use((req, res, next) => {
   let url = req.originalUrl;
   if (appRedirects.permanent.hasOwnProperty(url)) {
