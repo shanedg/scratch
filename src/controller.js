@@ -1,5 +1,6 @@
 import React from 'react';
 import ReactDOMServer from 'react-dom/server';
+import {HtmlJSX} from 'c/html';
 
 /*
  * Index template
@@ -7,28 +8,8 @@ import ReactDOMServer from 'react-dom/server';
 export let index = (req, res) => {
   console.log('index > ' + req.method + ' @ ' + req.originalUrl);
 
-  let meta = {
-    title: 'welcome',
-    description: 'described'
-  };
-
-  class Body extends React.Component {
-    render() {
-      return (
-        <body>
-          {this.props.children}
-        </body>
-      );
-    }
-  }
-
-  class Greeting extends React.Component {
-    render() {
-      return <Body><h1>Hello, {this.props.name}</h1></Body>;
-    }
-  }
-
-  res.send(ReactDOMServer.renderToString(<Greeting name="shane" />));
+  // res.send(ReactDOMServer.renderToString(<Greeting name="shane" />));
+  res.send('<!doctype html>' + ReactDOMServer.renderToString(<HtmlJSX><p>uhh</p></HtmlJSX>));
 
   // res.send(`
   //   <!doctype html>
