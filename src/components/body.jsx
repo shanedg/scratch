@@ -1,7 +1,7 @@
-import React from 'react';
-import {GTMBody} from 'c/google-tag-manager/gtm-body';
+import React, { Component } from 'react';
+import GTMBody from 'c/google-tag-manager/gtm-body';
 
-export class Body extends React.Component {
+export default class Body extends Component {
   constructor(props) {
     super(props);
   }
@@ -10,7 +10,13 @@ export class Body extends React.Component {
     return (
       <body>
         <GTMBody gtmId={this.props.gtmId} />
-        {this.props.children}
+          <article>
+            <section>
+              <h1>hi, planet</h1>
+              <button>hi</button>
+              {this.props.children}
+            </section>
+          </article>
       </body>
     );
   }
