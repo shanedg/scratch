@@ -1,8 +1,8 @@
-import React from 'react';
+import React, { Component } from 'react';
 import Head from 'c/head';
 import Body from 'c/body';
 
-export default class HtmlJSX extends React.Component {
+export default class HtmlJSX extends Component {
   constructor(props) {
     super(props);
   }
