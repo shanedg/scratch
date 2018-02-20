@@ -1,8 +1,8 @@
 {
-    "temporary": {
-      "/temp": "/"
-    },
-    "permanent": {
-        "/index.html": "/"
-    }
+  "temporary": {
+    "/temp": "/"
+  },
+  "permanent": {
+    "/index.html": "/"
+  }
 }
