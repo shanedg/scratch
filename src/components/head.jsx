@@ -1,7 +1,7 @@
 import React from 'react';
-import {GTMHead} from 'c/google-tag-manager/gtm-head';
+import GTMHead from 'c/google-tag-manager/gtm-head';
 
-export class Head extends React.Component {
+export default class Head extends React.Component {
   constructor(props) {
     super(props);
   }

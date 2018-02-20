@@ -1,6 +1,6 @@
 import React from 'react';
 
-export class GTMBody extends React.Component {
+export default class GTMBody extends React.Component {
   constructor(props) {
     super(props);
   }

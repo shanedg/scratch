@@ -1,6 +1,6 @@
 import React from 'react';
 
-export class GTMHead extends React.Component {
+export default class GTMHead extends React.Component {
   constructor(props) {
     super(props);
   }

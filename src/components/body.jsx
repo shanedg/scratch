@@ -1,7 +1,7 @@
 import React from 'react';
-import {GTMBody} from 'c/google-tag-manager/gtm-body';
+import GTMBody from 'c/google-tag-manager/gtm-body';
 
-export class Body extends React.Component {
+export default class Body extends React.Component {
   constructor(props) {
     super(props);
   }

@@ -1,6 +1,6 @@
 import React from 'react';
 import ReactDOMServer from 'react-dom/server';
-import {HtmlJSX} from 'c/html';
+import HtmlJSX from 'c/html';
 
 /*
  * Index template
