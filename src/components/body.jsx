@@ -10,13 +10,13 @@ export default class Body extends Component {
     return (
       <body>
         <GTMBody gtmId={this.props.gtmId} />
-          <article>
-            <section>
-              <h1>hi, planet</h1>
-              <button>hi</button>
-              {this.props.children}
-            </section>
-          </article>
+        <article>
+          <section>
+            <h1>hi, planet</h1>
+            <button>hi</button>
+            {this.props.children}
+          </section>
+        </article>
       </body>
     );
   }

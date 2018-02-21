@@ -1,15 +1,26 @@
 import React from 'react';
 import ReactDOMServer from 'react-dom/server';
-import HtmlJSX from 'c/html';
+// import HtmlJSX from 'c/html';
+import Head from 'c/head';
+import Body from 'c/body';
 
 /*
  * Index template
  */
 export let index = (req, res) => {
+  let gtmId = 'GTM-W9K5B8F';
+  let head = {
+    'title': 'titular title',
+    'description': 'describing the description',
+    'gtmId': gtmId
+  };
   // res.send('<!doctype html>' + ReactDOMServer.renderToStaticMarkup(<HtmlJSX><p>uhh</p></HtmlJSX>));
-  res.write('<!doctype html>');
-  const stream = ReactDOMServer.renderToStaticNodeStream(<HtmlJSX><p>uhh</p></HtmlJSX>);
+  res.write('<!doctype html><html className=\'no-js\'>');
+  const stream = ReactDOMServer.renderToStaticNodeStream(<Head options={head}></Head>);
+  const stream2 = ReactDOMServer.renderToNodeStream(<Body gtmId={gtmId}></Body>);
   stream.pipe(res);
+  stream2.pipe(res);
+  res.write('</html>');
 };
 
 /*
