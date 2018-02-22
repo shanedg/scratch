@@ -15,11 +15,12 @@ export let index = (req, res) => {
     'gtmId': gtmId
   };
 
-  // res.send('<!doctype html>' + ReactDOMServer.renderToStaticMarkup(<HtmlJSX><p>uhh</p></HtmlJSX>));
-
   // TODO: (shane) understand node streams/readable/writeable/pipe()
   // https://nodejs.org/api/stream.html#stream_readable_pipe_destination_options
+  // res.send('<!doctype html>' + ReactDOMServer.renderToStaticMarkup(<HtmlJSX><p>uhh</p></HtmlJSX>));
   res.write('<!doctype html><html className=\'no-js\'>');
+
+  // TODO: (shane) <head /> and <body /> props to create templates?
   const stream = ReactDOMServer.renderToStaticNodeStream(<Head options={head}></Head>);
   const stream2 = ReactDOMServer.renderToNodeStream(<Body gtmId={gtmId}></Body>);
   stream.pipe(res);
