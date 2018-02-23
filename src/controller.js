@@ -9,7 +9,7 @@ import Body from 'c/body';
  */
 export let index = (req, res) => {
   let gtmId = 'GTM-W9K5B8F';
-  let head = {
+  let headOptions = {
     'title': 'titular title',
     'description': 'describing the description',
     'gtmId': gtmId
@@ -21,10 +21,10 @@ export let index = (req, res) => {
   res.write('<!doctype html><html className=\'no-js\'>');
 
   // TODO: (shane) <head /> and <body /> props to create templates?
-  const stream = ReactDOMServer.renderToStaticNodeStream(<Head options={head}></Head>);
-  const stream2 = ReactDOMServer.renderToNodeStream(<Body gtmId={gtmId}></Body>);
-  stream.pipe(res);
-  stream2.pipe(res);
+  const head = ReactDOMServer.renderToStaticNodeStream(<Head options={headOptions}></Head>);
+  const bod = ReactDOMServer.renderToNodeStream(<Body gtmId={gtmId}></Body>);
+  head.pipe(res);
+  bod.pipe(res);
   res.write('</html>');
 };
 
