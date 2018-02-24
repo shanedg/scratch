@@ -25,9 +25,9 @@ phases:
     #commands:
       # - command
       # - command
-#artifacts:
-  #files:
-    # - location
+artifacts:
+  files:
+    - dist/server.js
     # - location
   #discard-paths: yes
   #base-directory: location
