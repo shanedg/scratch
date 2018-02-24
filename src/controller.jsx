@@ -1,12 +1,34 @@
 import React from 'react';
 import ReactDOMServer from 'react-dom/server';
-import HtmlJSX from 'c/html';
+// import HtmlJSX from 'c/html';
+import Head from 'c/head';
+import Body from 'c/body';
+import GTMBody from 'c/google-tag-manager/gtm-body';
 
 /*
  * Index template
  */
 export let index = (req, res) => {
-  res.send('<!doctype html>' + ReactDOMServer.renderToString(<HtmlJSX><p>uhh</p></HtmlJSX>));
+  let gtmId = 'GTM-W9K5B8F';
+  let headOptions = {
+    'title': 'titular title',
+    'description': 'describing the description',
+    'gtmId': gtmId
+  };
+
+  // TODO: (shane) understand node streams/readable/writeable/pipe()
+  // https://nodejs.org/api/stream.html#stream_readable_pipe_destination_options
+  // res.send('<!doctype html>' + ReactDOMServer.renderToStaticMarkup(<HtmlJSX><p>uhh</p></HtmlJSX>));
+  res.write('<!doctype html><html className=\'no-js\'>');
+
+  // TODO: (shane) <head /> and <body /> props to create templates?
+  const head = ReactDOMServer.renderToStaticNodeStream(<Head options={headOptions}></Head>);
+  const bod = ReactDOMServer.renderToNodeStream(<Body gtmId={gtmId}></Body>);
+  head.pipe(res);
+  res.write('<body>')
+  res.write(ReactDOMServer.renderToStaticMarkup(<GTMBody gtmId={gtmId} />));
+  bod.pipe(res);
+  res.write('</body></html>');
 };
 
 /*
