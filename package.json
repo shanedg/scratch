@@ -3,8 +3,8 @@
   "version": "1.0.0",
   "description": "fast, flexible personal site from nothing",
   "engines": {
-    "node": "9.4.0",
-    "npm": "5.6.0"
+    "node": "6.3.1",
+    "npm": "3.10.3"
   },
   "main": "dist/server.js",
   "scripts": {
