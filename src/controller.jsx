@@ -19,13 +19,13 @@ export let index = (req, res) => {
   // TODO: (shane) understand node streams/readable/writeable/pipe()
   // https://nodejs.org/api/stream.html#stream_readable_pipe_destination_options
   // res.send('<!doctype html>' + ReactDOMServer.renderToStaticMarkup(<HtmlJSX><p>uhh</p></HtmlJSX>));
-  res.write('<!doctype html><html className=\'no-js\'>');
+  res.write('<!doctype html><html className=\'no-js\' style=\'font-size: 14px\'>');
 
   // TODO: (shane) <head /> and <body /> props to create templates?
   const head = ReactDOMServer.renderToStaticNodeStream(<Head options={headOptions}></Head>);
   const bod = ReactDOMServer.renderToNodeStream(<Body gtmId={gtmId}></Body>);
   head.pipe(res);
-  res.write('<body>')
+  res.write('<body style=\'margin: 0\'>');
   res.write(ReactDOMServer.renderToStaticMarkup(<GTMBody gtmId={gtmId} />));
   bod.pipe(res);
   res.write('</body></html>');
