@@ -9,7 +9,6 @@ const app = express();
 /*
  * Express config
  */
-console.log('set port!');
 app.set('port', process.env.PORT || 3000);
 
 /*
