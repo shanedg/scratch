@@ -67,7 +67,7 @@ export default class Body extends Component {
             <section>
               <h1 style={h1}>hi, planet</h1>
               {this.props.children}
-              <button style={btn}>hey</button>
+              <button style={btn}>hey!</button>
             </section>
           </div>
         </article>
